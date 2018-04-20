@@ -11,11 +11,9 @@ GENERIC
 html, body {
     height: 100%;
 }
-
 img {
     display: inline-block;
 }
-
 .align-left {
     text-align: left;
 }
@@ -23,24 +21,71 @@ img {
     text-align: right;
 }
 .align-center {
-    text-align: center;
+    text-align: center; 
+}
+.displayinline {
+	display: inline;
+	img {
+		width: 40%;
+	}
 }
 body { 
     margin: 0;
     padding: 0;
-    background-image: url('../../build/images/backgrounds/dust_scratches.png');
+	//background-image: url('../../build/images/backgrounds/concrete-texture.png');
+	//background-image: url('../../build/images/backgrounds/dust_scratches.png');
+	background-color: $white;
 }
 .page-template-contact {
-	background-image: url('../../build/images/pinkgreen-graffiti.jpg');
+	background-image: url('../../build/images/backgrounds/pinkgreen-graffiti.jpg');
+	background-size: 100%;
+}
+.page-template-about {
+	//background-image: url('../../build/images/backgrounds/blue-yellow-pink-reverse.jpg');
+	//background-image: url('../../build/images/backgrounds/green-pink.jpg');
+	//background-image: url('../../build/images/backgrounds/darker.jpg');
+	//background-image: url('../../build/images/backgrounds/loveiscolor.jpg');
+	//background-image: url('../../build/images/backgrounds/lovewall.jpg');
+	//background-image: url('../../build/images/backgrounds/dark-graffiti.jpg');
+	//background-image: url('../../build/images/backgrounds/space.jpg');
+	//background-image: url('../../build/images/backgrounds/purple-black.jpg');
+	background-image: url('../../build/images/backgrounds/dark-wall.jpg');
 	background-size: 100%;
 }
 main {
-    margin-bottom: 100px;
+    margin-bottom: 0;
     background-color: transparent;
 }
 ul {
 	margin: 0;
 	padding: 0;
+}
+.defaultrow {
+	margin: 50px auto;
+	max-width: 1200px; 
+	background-color: rgba(255,255,255, 0.9);
+	h1 {
+		font-family: $oswald;
+		font-weight: 800;
+		text-transform: uppercase; 
+		margin: 0 0 40px 0;
+		font-size: 2.3em;
+	}
+}
+@media only screen and (max-width: 991px) {
+	.defaultrow {
+		text-align: center;
+		h1 {
+			margin: 20px 0 40px 0;
+		}
+	}
+}
+a {
+	color:$white;
+	&:hover{
+		color: $white;
+		text-decoration: none;
+	}
 }
 /*---------------------------
 
@@ -68,6 +113,7 @@ NAVBAR
         margin: 15px;
     }
     img {
+		//width: 150px;
     	margin: 20px 0;
     }
 }
@@ -97,11 +143,30 @@ NAVBAR
         }
     }
 }
+
 .navbar-brand {
-    height: auto;
+	height: auto;
     padding: 0;
 }
 
+@media only screen and (max-width: 767px) {
+	.navbar-default .navbar-nav li a {
+		margin: 0;
+	}
+	.navbar-right {
+		display: block;
+		text-align: right;
+		padding: 0 5px 0 0;
+		margin-bottom: 15px;
+	}
+	.navbar-nav {
+		li {
+			a {
+				margin: 0;
+			}
+		}
+	}
+}
 /*---------------------------
 
 NAV LINK EFFECTS
@@ -178,13 +243,11 @@ NAV LINK EFFECTS
 	-webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	-webkit-transition-duration: 0.3s;
-	transition-duration: 0.3s;
+	transition-duration: 0.3s; 
 }
 
 /*---------------------------
-
 HAMBURGER MENU
-
 ---------------------------*/
 
 .navbar-default .navbar-toggle {
@@ -220,19 +283,15 @@ HAMBURGER MENU
         opacity: 1;
     }
 }
-
+/*---------------------------
+FEATURE
+---------------------------*/
 .feature {
     height: 700px;
     width: 100%;
-    //background-image: url('/build/images/graffiti-pink-green-1800-700.jpg');  
-    background-image: url('../../build/images/juan-1800-700.jpg');
-    //background-image: url('/build/images/mario-1800-700.jpg');
-    //background-image: url('/build/images/nat-1800-700.jpg');
-    //-image: url('/build/images/shoe-1800-700.jpg');
+    background-image: url('../../build/images/backgrounds/juan.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
-    //opacity: 0.6;
-    //background-color: #dbdbdb;
     padding: 150px; 
 }
 .feature-inline {
@@ -244,6 +303,41 @@ HAMBURGER MENU
         font-weight: 1000; 
         font-size: 3em;
     }
+}
+@media only screen and (max-width: 450px) {
+	.feature {
+		padding: 50px;
+		height: 300px;
+	}
+	.feature-inline {
+		height: 120px;
+		h1 {
+			font-size: 1.8em;
+		}
+	}
+}
+@media only screen and (min-width: 451px) and (max-width: 767px) {
+    .feature {
+		height: 380px;
+		padding: 50px;
+	}
+	.feature-inline {
+		height: 150px;
+		h1 {
+			font-size: 2.1em;
+		}
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+	.feature {
+		height: 500px;
+		padding: 80px;
+	}
+	.feature-inline {
+		h1 {
+			font-size: 2.4em;
+		}
+	}
 }
 .btn-view-work {
     background-color: transparent;
@@ -271,11 +365,14 @@ HAMBURGER MENU
         margin: 8px;
     }
 }
-
+@media only screen and (max-width: 450px) {
+	.btn-view-work {
+		font-size: 1.1em;
+		padding: 5px 8px;
+	}
+}
 /*---------------------------- 
-
 GRID FIGURE
-
 ----------------------------*/
 .content {
 	margin: 0 auto;
@@ -290,10 +387,22 @@ GRID FIGURE
 	text-align: center;
 	min-height: 850px; //need this as it is relative and other divs comes under otherwise
 }
+@media only screen and (max-width: 766px) {
+	.grid {
+		margin: 0 auto 30px auto;
+		min-height: 1100px;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+	.grid {
+		margin: 0 auto 30px auto;
+		min-height: 800px;
+	}
+}
 .thumbnail{
     margin: 20px;
 }
-/* Common style */
+
 .grid figure {
 	position: relative;
 	float: left;
@@ -309,6 +418,9 @@ GRID FIGURE
 	cursor: pointer;
 }
 @media only screen and (max-width: 767px) {
+	.content {
+		max-width: 700px;
+	}
     .grid {
         max-width: 340px;
     }
@@ -318,7 +430,6 @@ GRID FIGURE
 	display: block;
 	min-height: 100%;
 	max-width: 100%;
-	//opacity: 0.8;
 }
 
 .grid figure figcaption {
@@ -342,10 +453,9 @@ GRID FIGURE
 	left: 0;
 	width: 100%;
 	height: 100%;
+	color: $white;
 }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
 	z-index: 1000;
 	text-indent: 200%;
@@ -379,7 +489,7 @@ ZOE
 ----------------------------*/
 
 figure.effect-zoe figcaption {
-	font-family: $raleway;
+	font-family: $oswald;
 	top: auto;
 	bottom: 0;
 	padding: 1em;
@@ -476,92 +586,23 @@ figure.effect-zoe:hover p.icon-links a:first-child {
 }
 
 /*---------------------------- 
-
 ABOUT PAGE
-
 ----------------------------*/
 
 .aboutrow {
-	margin: 70px 0 70px 0;
-	h3 {
-		margin: 0 20px 20px 20px;
-		font-family: $caveat;
-		font-size: 2.5em;
-	}
+	padding: 65px;
 	p {
 		font-size: 1.3em;
 		font-family: $lato;
-		margin: 20px;
+		margin: 20px 20px 100px 0;
 		line-height: 170%;
 	}
 }
-
 /*---------------------------- 
-
-FOOTER
-
-----------------------------*/
-
-.footer {
-    background-color: #f8f8f8;
-    //border-top: solid 1px black;
-    padding: 30px;
-    //margin: 0 20px;
-    p{
-    	font-size: 1.1em;
-    	margin-top: 15px;
-    }
-}
-.social-media {
-	ul{
-		li{
-			list-style: none;
-			display: inline-block;
-			margin: 0 5px;
-			a{
-				display: block;
-				width: 50px;
-				height: 50px;
-				padding-top: 15px;
-				background-color: #ababab;
-				color: #f5f5f5;
-				border-radius: 100px;
-				text-align: center;
-				i {
-					font-size: 150%;
-					padding: 0;
-					margin: 0;
-					box-sizing: border-box;
-				}
-			}
-		}
-	}
-}
-.footer-right {
-	text-align: right;
-}
-.footer-left {
-	text-align: left;
-}
-
-/*---------------------------- 
-
 CONTACT FORM
-
 ----------------------------*/
 .contactrow {
-	margin: 50px auto;
-	padding: 40px;
-	width: 900px;
-	//border-radius: 5px;
-	background-color: rgba(255,255,255, 0.9);
-	h1 {
-		font-family: $oswald;
-		font-weight: 800;
-		text-transform: uppercase; 
-		margin: 0 0 40px 10px;
-		font-size: 2.3em;
-	}
+	padding: 65px 110px;
 	h2 {
 		font-family: $oswald; 
 		font-weight: 200;
@@ -569,6 +610,7 @@ CONTACT FORM
 		font-size: 1.7em;
 		color: darken(#D68CB0, 1%);
 		margin: 10px 0 20px 0;
+		
 	}
 	h3 {
 		margin: 15px 0 35px 0;
@@ -581,6 +623,16 @@ CONTACT FORM
 	}
 	a {
 		color: black;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.contactrow {
+		padding: 30px;
+	}
+}
+@media only screen and (min-width: 991px) and (max-width: 1122px) {
+	.contactrow {
+		padding: 65px 35px;
 	}
 }
 
@@ -615,34 +667,54 @@ div.wpcf7 {
 .column-contact {
 	margin-top: 30px;
 }
+@media only screen and (max-width: 991px) {
+	.contactDirect {
+		text-align: center;
+	}
+}
+
 /*---------------------------- 
 
 BLOG PAGE 
 
 ----------------------------*/
-
+.blogContent {
+	border-left: solid 1px $black;
+	padding: 23px 0 200px 50px;
+}
+@media only screen and (max-width: 767px) {
+	.blogContent {
+		border: 0;
+	}
+}
 .blog-post {
 	text-align: left;
-	margin: 30px 0 70px 0;
+	margin: 0 0 70px 0;
+	h2 {
+		font-family: $oswald;
+		text-transform: capitalize;
+	}
 	li {
 		list-style: none;
 	}
 	a {
-		color: $brand-pink;
-	}
-	h4 {
-		font-size: 1.1em;
+		color: $brand-green;
+		font-size: $roboto-mono;
+		font-size: 1em;
 	}
 	h3 {
 		font-size: 1.1em;
 	}
+	p {
+		font-size: 1.1em;
+	}
 	img {
-		width: 600px;
-		height: 400px;
+		width: auto;
+		height: 300px;
 	}
 }
 .category-menu {
-	padding: 10px;
+	padding: 23px 33px 0 33px;
 }
 .category-list {
 	list-style: none;
@@ -656,6 +728,120 @@ BLOG PAGE
 	}
 }
 .search-field {
-	margin: 10px 0;
-	padding: 5px 10px;
+	margin: 10px 0 10px 0;
+	padding: 6px 11px;
+	font-family: $roboto-mono;
+	border: 1px solid gray;
+	border-radius: 5px;
+	&:focus {
+		border: 1px solid $brand-pink;
+	}
+}
+@media only screen and (min-width: 767px) and (max-width: 1450px) {
+	.search-field {
+		width: 100px;
+	}
+}
+.page-content-title {
+	margin: 0;
+	font-size: 1.2em;
+	margin: 0 0 40px 0;
+}
+
+.detailcontainer {
+	max-width: 1200px;
+	margin: 100px auto;
+	min-height: 500px;
+	img {
+		border: 2px solid $light-gray;
+		margin: 0 0 20px 0;
+		//@include box-shadow(2px 2px 3px 0px rgba(184,184,184,1)); 
+	}
+	h1 {
+		text-transform: uppercase;
+		font-family: $oswald;
+	}
+	p {
+		font-size: 1.3em;
+		margin: 20px 0;
+	}
+	a {
+		text-transform: uppercase;
+		font-size: 1.3em;
+		font-family: $oswald;
+		letter-spacing: 1px;
+		color: $black;
+	}
+	i {
+		margin: 0 10px;
+	}
+
+}
+.detailrow {
+	margin-top: 10px;
+}
+.detailtext {
+	padding: 0 0 0 30px;
+}
+#backLink {
+	font-size: 1em;
+}
+/*---------------------------- 
+FOOTER
+----------------------------*/
+
+.footer {
+    background-color: #f8f8f8;
+    //border-top: solid 1px black;
+    padding: 30px;
+    margin: 0;
+    p{
+    	font-size: 1.1em;
+    	margin-top: 15px;
+    }
+}
+@media only screen and (max-width: 767px) {
+	.footer {
+		font-size: 0.9em;
+		margin-top: 30px;
+	}
+}
+.social-media {
+	ul{
+		li{
+			list-style: none;
+			display: inline-block;
+			margin: 0 5px;
+			a{
+				display: block;
+				width: 50px;
+				height: 50px;
+				padding-top: 15px;
+				background-color: #ababab;
+				color: #f5f5f5;
+				border-radius: 100px;
+				text-align: center;
+				i {
+					font-size: 150%;
+					padding: 0;
+					margin: 0;
+					box-sizing: border-box;
+				}
+			}
+		}
+	}
+}
+.footer-right {
+	text-align: right;
+}
+.footer-left {
+	text-align: left;
+} 
+@media only screen and (max-width: 991px) {
+	.footer-right {
+		text-align: center;
+	}
+	.footer-left {
+		text-align: center;
+	} 
 }

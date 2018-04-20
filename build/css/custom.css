@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Oswald|Nanum+Pen+Script|Rancho|Roboto|Roboto+Mono|Roboto+Condensed|Covered+By+Your+Grace|Lato|Reenie+Beanie|Abril+Fatface|Allura|Pacifico|Sacramento|Montserrat|Raleway|Monoton|");
+@import url("https://fonts.googleapis.com/css?family=Caveat+Brush|Oswald|Nanum+Pen+Script|Rancho|Roboto|Roboto+Mono|Roboto+Condensed|Covered+By+Your+Grace|Lato|Reenie+Beanie|Abril+Fatface|Allura|Pacifico|Sacramento|Montserrat|Raleway|Monoton");
 /*---------------------------
 
 GENERIC
@@ -19,22 +19,54 @@ img {
 .align-center {
   text-align: center; }
 
+.displayinline {
+  display: inline; }
+  .displayinline img {
+    width: 40%; }
+
 body {
   margin: 0;
   padding: 0;
-  background-image: url("../../build/images/backgrounds/dust_scratches.png"); }
+  background-color: #fff; }
 
 .page-template-contact {
-  background-image: url("../../build/images/pinkgreen-graffiti.jpg");
+  background-image: url("../../build/images/backgrounds/pinkgreen-graffiti.jpg");
+  background-size: 100%; }
+
+.page-template-about {
+  background-image: url("../../build/images/backgrounds/dark-wall.jpg");
   background-size: 100%; }
 
 main {
-  margin-bottom: 100px;
+  margin-bottom: 0;
   background-color: transparent; }
 
 ul {
   margin: 0;
   padding: 0; }
+
+.defaultrow {
+  margin: 50px auto;
+  max-width: 1200px;
+  background-color: rgba(255, 255, 255, 0.9); }
+  .defaultrow h1 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin: 0 0 40px 0;
+    font-size: 2.3em; }
+
+@media only screen and (max-width: 991px) {
+  .defaultrow {
+    text-align: center; }
+    .defaultrow h1 {
+      margin: 20px 0 40px 0; } }
+
+a {
+  color: #fff; }
+  a:hover {
+    color: #fff;
+    text-decoration: none; }
 
 /*---------------------------
 
@@ -83,6 +115,17 @@ NAVBAR
 .navbar-brand {
   height: auto;
   padding: 0; }
+
+@media only screen and (max-width: 767px) {
+  .navbar-default .navbar-nav li a {
+    margin: 0; }
+  .navbar-right {
+    display: block;
+    text-align: right;
+    padding: 0 5px 0 0;
+    margin-bottom: 15px; }
+  .navbar-nav li a {
+    margin: 0; } }
 
 /*---------------------------
 
@@ -154,9 +197,7 @@ NAV LINK EFFECTS
   transition-duration: 0.3s; }
 
 /*---------------------------
-
 HAMBURGER MENU
-
 ---------------------------*/
 .navbar-default .navbar-toggle {
   margin-top: 28px;
@@ -196,10 +237,13 @@ HAMBURGER MENU
     top: 0;
     opacity: 1; }
 
+/*---------------------------
+FEATURE
+---------------------------*/
 .feature {
   height: 700px;
   width: 100%;
-  background-image: url("../../build/images/juan-1800-700.jpg");
+  background-image: url("../../build/images/backgrounds/juan.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
   padding: 150px; }
@@ -212,6 +256,31 @@ HAMBURGER MENU
     font-family: "Raleway", sans-serif;
     font-weight: 1000;
     font-size: 3em; }
+
+@media only screen and (max-width: 450px) {
+  .feature {
+    padding: 50px;
+    height: 300px; }
+  .feature-inline {
+    height: 120px; }
+    .feature-inline h1 {
+      font-size: 1.8em; } }
+
+@media only screen and (min-width: 451px) and (max-width: 767px) {
+  .feature {
+    height: 380px;
+    padding: 50px; }
+  .feature-inline {
+    height: 150px; }
+    .feature-inline h1 {
+      font-size: 2.1em; } }
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .feature {
+    height: 500px;
+    padding: 80px; }
+  .feature-inline h1 {
+    font-size: 2.4em; } }
 
 .btn-view-work {
   background-color: transparent;
@@ -237,10 +306,13 @@ HAMBURGER MENU
   .btn-view-work i {
     margin: 8px; }
 
+@media only screen and (max-width: 450px) {
+  .btn-view-work {
+    font-size: 1.1em;
+    padding: 5px 8px; } }
+
 /*---------------------------- 
-
 GRID FIGURE
-
 ----------------------------*/
 .content {
   margin: 0 auto;
@@ -255,10 +327,19 @@ GRID FIGURE
   text-align: center;
   min-height: 850px; }
 
+@media only screen and (max-width: 766px) {
+  .grid {
+    margin: 0 auto 30px auto;
+    min-height: 1100px; } }
+
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+  .grid {
+    margin: 0 auto 30px auto;
+    min-height: 800px; } }
+
 .thumbnail {
   margin: 20px; }
 
-/* Common style */
 .grid figure {
   position: relative;
   float: left;
@@ -274,6 +355,8 @@ GRID FIGURE
   cursor: pointer; }
 
 @media only screen and (max-width: 767px) {
+  .content {
+    max-width: 700px; }
   .grid {
     max-width: 340px; } }
 
@@ -301,10 +384,9 @@ GRID FIGURE
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  color: #fff; }
 
-/* Anchor will cover the whole item by default */
-/* For some effects it will show as a button */
 .grid figure figcaption > a {
   z-index: 1000;
   text-indent: 200%;
@@ -333,7 +415,7 @@ ZOE
 
 ----------------------------*/
 figure.effect-zoe figcaption {
-  font-family: "Raleway", sans-serif;
+  font-family: "Oswald", sans-serif;
   top: auto;
   bottom: 0;
   padding: 1em;
@@ -416,33 +498,185 @@ figure.effect-zoe:hover p.icon-links a:first-child {
   transition-delay: 0.2s; }
 
 /*---------------------------- 
-
 ABOUT PAGE
-
 ----------------------------*/
 .aboutrow {
-  margin: 70px 0 70px 0; }
-  .aboutrow h3 {
-    margin: 0 20px 20px 20px;
-    font-family: "Caveat Brush", cursive;
-    font-size: 2.5em; }
+  padding: 65px; }
   .aboutrow p {
     font-size: 1.3em;
     font-family: "Lato", sans-serif;
-    margin: 20px;
+    margin: 20px 20px 100px 0;
     line-height: 170%; }
 
 /*---------------------------- 
+CONTACT FORM
+----------------------------*/
+.contactrow {
+  padding: 65px 110px; }
+  .contactrow h2 {
+    font-family: "Oswald", sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 1.7em;
+    color: #d588ad;
+    margin: 10px 0 20px 0; }
+  .contactrow h3 {
+    margin: 15px 0 35px 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2em;
+    font-style: italic; }
+  .contactrow h5 {
+    font-size: 1.2em; }
+  .contactrow a {
+    color: black; }
 
+@media only screen and (max-width: 767px) {
+  .contactrow {
+    padding: 30px; } }
+
+@media only screen and (min-width: 991px) and (max-width: 1122px) {
+  .contactrow {
+    padding: 65px 35px; } }
+
+div.wpcf7 textarea, div.wpcf7 input {
+  font-size: 120%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #b7b7b7;
+  width: 350px;
+  font-family: "Roboto Mono", monospace;
+  color: #595959; }
+
+.wpcf7-submit {
+  padding: 10px 20px;
+  border: 1px solid #0b5f3f !important;
+  border-radius: 7px !important; }
+  .wpcf7-submit:hover, .wpcf7-submit:focus {
+    background-color: #244b3e !important;
+    color: #fff !important;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transform: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+
+.column-contact {
+  margin-top: 30px; }
+
+@media only screen and (max-width: 991px) {
+  .contactDirect {
+    text-align: center; } }
+
+/*---------------------------- 
+
+BLOG PAGE 
+
+----------------------------*/
+.blogContent {
+  border-left: solid 1px #000;
+  padding: 23px 0 200px 50px; }
+
+@media only screen and (max-width: 767px) {
+  .blogContent {
+    border: 0; } }
+
+.blog-post {
+  text-align: left;
+  margin: 0 0 70px 0; }
+  .blog-post h2 {
+    font-family: "Oswald", sans-serif;
+    text-transform: capitalize; }
+  .blog-post li {
+    list-style: none; }
+  .blog-post a {
+    color: #0b5f3f;
+    font-size: "Roboto Mono", monospace;
+    font-size: 1em; }
+  .blog-post h3 {
+    font-size: 1.1em; }
+  .blog-post p {
+    font-size: 1.1em; }
+  .blog-post img {
+    width: auto;
+    height: 300px; }
+
+.category-menu {
+  padding: 23px 33px 0 33px; }
+
+.category-list {
+  list-style: none;
+  margin: 10px 0; }
+  .category-list li {
+    margin: 5px; }
+  .category-list a {
+    color: black;
+    font-size: 1.2em; }
+
+.search-field {
+  margin: 10px 0 10px 0;
+  padding: 6px 11px;
+  font-family: "Roboto Mono", monospace;
+  border: 1px solid gray;
+  border-radius: 5px; }
+  .search-field:focus {
+    border: 1px solid #d94f5c; }
+
+@media only screen and (min-width: 767px) and (max-width: 1450px) {
+  .search-field {
+    width: 100px; } }
+
+.page-content-title {
+  margin: 0;
+  font-size: 1.2em;
+  margin: 0 0 40px 0; }
+
+.detailcontainer {
+  max-width: 1200px;
+  margin: 100px auto;
+  min-height: 500px; }
+  .detailcontainer img {
+    border: 2px solid #b7b7b7;
+    margin: 0 0 20px 0; }
+  .detailcontainer h1 {
+    text-transform: uppercase;
+    font-family: "Oswald", sans-serif; }
+  .detailcontainer p {
+    font-size: 1.3em;
+    margin: 20px 0; }
+  .detailcontainer a {
+    text-transform: uppercase;
+    font-size: 1.3em;
+    font-family: "Oswald", sans-serif;
+    letter-spacing: 1px;
+    color: #000; }
+  .detailcontainer i {
+    margin: 0 10px; }
+
+.detailrow {
+  margin-top: 10px; }
+
+.detailtext {
+  padding: 0 0 0 30px; }
+
+#backLink {
+  font-size: 1em; }
+
+/*---------------------------- 
 FOOTER
-
 ----------------------------*/
 .footer {
   background-color: #f8f8f8;
-  padding: 30px; }
+  padding: 30px;
+  margin: 0; }
   .footer p {
     font-size: 1.1em;
     margin-top: 15px; }
+
+@media only screen and (max-width: 767px) {
+  .footer {
+    font-size: 0.9em;
+    margin-top: 30px; } }
 
 .social-media ul li {
   list-style: none;
@@ -469,97 +703,8 @@ FOOTER
 .footer-left {
   text-align: left; }
 
-/*---------------------------- 
-
-CONTACT FORM
-
-----------------------------*/
-.contactrow {
-  margin: 50px auto;
-  padding: 40px;
-  width: 900px;
-  background-color: rgba(255, 255, 255, 0.9); }
-  .contactrow h1 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
-    margin: 0 0 40px 10px;
-    font-size: 2.3em; }
-  .contactrow h2 {
-    font-family: "Oswald", sans-serif;
-    font-weight: 200;
-    text-transform: uppercase;
-    font-size: 1.7em;
-    color: #d588ad;
-    margin: 10px 0 20px 0; }
-  .contactrow h3 {
-    margin: 15px 0 35px 0;
-    font-family: "Roboto", sans-serif;
-    font-size: 1.2em;
-    font-style: italic; }
-  .contactrow h5 {
-    font-size: 1.2em; }
-  .contactrow a {
-    color: black; }
-
-div.wpcf7 textarea, div.wpcf7 input {
-  font-size: 120%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #b7b7b7;
-  width: 350px;
-  font-family: "Roboto Mono", monospace;
-  color: #595959; }
-
-.wpcf7-submit {
-  padding: 10px 20px;
-  border: 1px solid #255846 !important;
-  border-radius: 7px !important; }
-  .wpcf7-submit:hover, .wpcf7-submit:focus {
-    background-color: #244b3e !important;
-    color: #fff !important;
-    -webkit-transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -ms-transform: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-
-.column-contact {
-  margin-top: 30px; }
-
-/*---------------------------- 
-
-BLOG PAGE 
-
-----------------------------*/
-.blog-post {
-  text-align: left;
-  margin: 30px 0 70px 0; }
-  .blog-post li {
-    list-style: none; }
-  .blog-post a {
-    color: #d94f5c; }
-  .blog-post h4 {
-    font-size: 1.1em; }
-  .blog-post h3 {
-    font-size: 1.1em; }
-  .blog-post img {
-    width: 600px;
-    height: 400px; }
-
-.category-menu {
-  padding: 10px; }
-
-.category-list {
-  list-style: none;
-  margin: 10px 0; }
-  .category-list li {
-    margin: 5px; }
-  .category-list a {
-    color: black;
-    font-size: 1.2em; }
-
-.search-field {
-  margin: 10px 0;
-  padding: 5px 10px; }
+@media only screen and (max-width: 991px) {
+  .footer-right {
+    text-align: center; }
+  .footer-left {
+    text-align: center; } }

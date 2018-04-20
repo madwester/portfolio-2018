@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 
 // set up text to print, each item in array is new line
 var aText = new Array( 
-	"and I'm a Frontend Developer"
+	"and I'm a budding Frontend Developer"
 	);
 	var iSpeed = 100; // time delay of print out
 	var iIndex = 0; // start printing array at this posision

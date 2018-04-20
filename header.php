@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
 <head>
-    <title>MW | Frontend Developer</title>
-    <link rel="icon" type="image/png" href="<?php bloginfo('template_directory')?>/build/images/mw-favoicon.png">
-    <?php wp_head(); ?>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>MW | Frontend Developer</title>
+  <link rel="icon" type="image/png" href="<?php bloginfo('template_directory')?>/build/images/mw-favoicon.png">
+  <?php wp_head(); ?>
 </head>
 <body <?php body_class($class); ?>>
 <nav class="navbar navbar-default navbar-static-top">
@@ -17,7 +18,7 @@
       </button>
 
       <div class="logotype">
-        <a href="index.php"><img src="<?php bloginfo('template_directory')?>/build/images/logotype/mw-smaller.png"></a>
+        <a href="http://localhost:8888/home/"><img src="<?php bloginfo('template_directory')?>/build/images/logotype/mw-smaller.png"></a>
       </div>
     </div>
     <nav class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">

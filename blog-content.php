@@ -1,4 +1,4 @@
-<div class="blog-post">
+<div class="blog-post col-12">
 
 	<h4><?php the_category(); ?></h4>
 	<h2><?php the_title(); ?></h2>
