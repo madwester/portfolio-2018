@@ -1,8 +1,18 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>MW | Frontend Developer</title>
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image" content="<?php bloginfo('template_directory')?>/build/images/mockup-portfolio-6.jpg">
+  <meta property="og:image:width" content="200">
+  <meta property="og:image:height" content="200">
+  <meta property="og:title" content='MW | Portfolio'>
+  <meta property='og:description' content="Maddies Portfolio. Budding frontend developer, based in Sydney Australia.">
+  <meta property='og:url' content="/www.madwester.com">
+  <meta name="keywords" content="frontend, wordpress, web, design, development, coder, sydney, australia"/>
+  <meta name="description" content="Maddie's Portfolio. Budding frontend developer, based in Sydney Australia."/>
+  <meta name="author" content="Madeleine Westerstrom, madwester@gmail.com">
+  <title>MW | Junior Frontend Developer</title>
   <link rel="icon" type="image/png" href="<?php bloginfo('template_directory')?>/build/images/mw-favoicon.png">
   <?php wp_head(); ?>
 </head>
@@ -18,7 +28,7 @@
       </button>
 
       <div class="logotype">
-        <a href="http://localhost:8888/home/"><img src="<?php bloginfo('template_directory')?>/build/images/logotype/mw-smaller.png"></a>
+        <a href="http://madwester.com/home/"><img src="<?php bloginfo('template_directory')?>/build/images/logotype/mw-smaller.png"></a>
       </div>
     </div>
     <nav class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">

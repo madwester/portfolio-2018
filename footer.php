@@ -12,7 +12,7 @@
               </nav>
             </div>
             <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-12 footer-left">
-              <p>&copy; 2018 by Madeleine Westerstrom. All right reserved.</p>
+              <p>&copy; 2018 by Madeleine Westerstrom. All rights reserved.</p>
             </div>
           </div>
         </div>

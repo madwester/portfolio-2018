@@ -19,11 +19,6 @@ img {
 .align-center {
   text-align: center; }
 
-.displayinline {
-  display: inline; }
-  .displayinline img {
-    width: 40%; }
-
 body {
   margin: 0;
   padding: 0;
@@ -39,11 +34,16 @@ body {
 
 main {
   margin-bottom: 0;
-  background-color: transparent; }
+  background-color: transparent;
+  min-height: 100%; }
 
 ul {
   margin: 0;
   padding: 0; }
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important; }
 
 .defaultrow {
   margin: 50px auto;
@@ -60,7 +60,7 @@ ul {
   .defaultrow {
     text-align: center; }
     .defaultrow h1 {
-      margin: 20px 0 40px 0; } }
+      margin: 40px 0; } }
 
 a {
   color: #fff; }
@@ -83,16 +83,19 @@ NAVBAR
   margin: 0;
   list-style: none; }
 
-.logotype a {
-  font-family: "Monoton", cursive;
-  font-weight: 100;
-  color: #d94f5c;
-  font-size: 3.5em;
-  text-decoration: none;
-  margin: 15px; }
-
 .logotype img {
-  margin: 20px 0; }
+  margin: 20px 0;
+  width: 100%; }
+
+@media only screen and (max-width: 550px) {
+  .logotype img {
+    margin: 20px;
+    width: 30%; } }
+
+@media only screen and (min-width: 551px) and (max-width: 767px) {
+  .logotype img {
+    margin: 20px;
+    width: 20%; } }
 
 .navbar-default {
   padding: 0;
@@ -111,10 +114,6 @@ NAVBAR
     font-size: 1.1em; }
     .navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a:focus {
       outline: none; }
-
-.navbar-brand {
-  height: auto;
-  padding: 0; }
 
 @media only screen and (max-width: 767px) {
   .navbar-default .navbar-nav li a {
@@ -257,23 +256,27 @@ FEATURE
     font-weight: 1000;
     font-size: 3em; }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 766px) {
   .feature {
-    padding: 50px;
-    height: 300px; }
+    background-image: url("../../build/images/backgrounds/mobile-juan.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 350px;
+    padding: 70px 40px; }
   .feature-inline {
     height: 120px; }
     .feature-inline h1 {
-      font-size: 1.8em; } }
+      font-size: 2.1em;
+      font-weight: 800; } }
 
-@media only screen and (min-width: 451px) and (max-width: 767px) {
-  .feature {
-    height: 380px;
-    padding: 50px; }
+@media only screen and (max-width: 450px) {
+  .feature-inline h1 {
+    font-size: 1.8em;
+    font-weight: 800; } }
+
+@media only screen and (max-width: 567px) {
   .feature-inline {
-    height: 150px; }
-    .feature-inline h1 {
-      font-size: 2.1em; } }
+    height: 150px; } }
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {
   .feature {
@@ -325,17 +328,17 @@ GRID FIGURE
   max-width: 1000px;
   list-style: none;
   text-align: center;
-  min-height: 850px; }
+  min-height: 1200px; }
 
 @media only screen and (max-width: 766px) {
   .grid {
     margin: 0 auto 30px auto;
-    min-height: 1100px; } }
+    min-height: 1400px; } }
 
 @media only screen and (min-width: 767px) and (max-width: 991px) {
   .grid {
     margin: 0 auto 30px auto;
-    min-height: 800px; } }
+    min-height: 1200px; } }
 
 .thumbnail {
   margin: 20px; }
@@ -508,6 +511,10 @@ ABOUT PAGE
     margin: 20px 20px 100px 0;
     line-height: 170%; }
 
+@media only screen and (max-width: 991px) {
+  .aboutrow {
+    padding: 30px 20px; } }
+
 /*---------------------------- 
 CONTACT FORM
 ----------------------------*/
@@ -544,7 +551,7 @@ div.wpcf7 textarea, div.wpcf7 input {
   padding: 10px;
   border-radius: 3px;
   border: 1px solid #b7b7b7;
-  width: 350px;
+  width: 98%;
   font-family: "Roboto Mono", monospace;
   color: #595959; }
 
@@ -579,14 +586,17 @@ BLOG PAGE
 
 @media only screen and (max-width: 767px) {
   .blogContent {
-    border: 0; } }
+    border: 0;
+    padding: 0px;
+    margin: 0px; } }
 
 .blog-post {
+  width: 98%;
   text-align: left;
   margin: 0 0 70px 0; }
   .blog-post h2 {
     font-family: "Oswald", sans-serif;
-    text-transform: capitalize; }
+    text-transform: uppercase; }
   .blog-post li {
     list-style: none; }
   .blog-post a {
@@ -594,15 +604,29 @@ BLOG PAGE
     font-size: "Roboto Mono", monospace;
     font-size: 1em; }
   .blog-post h3 {
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    margin-bottom: 30px; }
   .blog-post p {
-    font-size: 1.1em; }
+    font-size: 1.2em;
+    font-family: "Roboto", sans-serif; }
   .blog-post img {
-    width: auto;
-    height: 300px; }
+    margin: 10px 0; }
+
+@media only screen and (max-width: 767px) {
+  .blog-post {
+    margin: 0; } }
+
+@media only screen and (max-width: 650px) {
+  .blog-post img {
+    width: 80%;
+    height: 80%; } }
 
 .category-menu {
   padding: 23px 33px 0 33px; }
+
+@media only screen and (max-width: 767px) {
+  .category-menu {
+    padding: 10px; } }
 
 .category-list {
   list-style: none;
@@ -640,7 +664,8 @@ BLOG PAGE
     margin: 0 0 20px 0; }
   .detailcontainer h1 {
     text-transform: uppercase;
-    font-family: "Oswald", sans-serif; }
+    font-family: "Oswald", sans-serif;
+    margin: 0; }
   .detailcontainer p {
     font-size: 1.3em;
     margin: 20px 0; }
@@ -653,6 +678,10 @@ BLOG PAGE
   .detailcontainer i {
     margin: 0 10px; }
 
+@media only screen and (max-width: 767px) {
+  .detailcontainer {
+    margin: 20px auto; } }
+
 .detailrow {
   margin-top: 10px; }
 
@@ -661,6 +690,9 @@ BLOG PAGE
 
 #backLink {
   font-size: 1em; }
+
+.backBtnDiv {
+  margin-bottom: 10px; }
 
 /*---------------------------- 
 FOOTER
@@ -675,6 +707,7 @@ FOOTER
 
 @media only screen and (max-width: 767px) {
   .footer {
+    padding: 40px;
     font-size: 0.9em;
     margin-top: 30px; } }
 
@@ -686,11 +719,20 @@ FOOTER
     display: block;
     width: 50px;
     height: 50px;
-    padding-top: 15px;
+    padding-top: 13px;
     background-color: #ababab;
+    border: 2px solid #ababab;
     color: #f5f5f5;
     border-radius: 100px;
     text-align: center; }
+    .social-media ul li a:hover {
+      background-color: #f5f5f5;
+      color: #ababab;
+      -webkit-transition: all 0.3s ease-in-out;
+      -moz-transition: all 0.3s ease-in-out;
+      -ms-transform: all 0.3s ease-in-out;
+      -o-transition: all 0.3s ease-in-out;
+      transition: all 0.3s ease-in-out; }
     .social-media ul li a i {
       font-size: 150%;
       padding: 0;

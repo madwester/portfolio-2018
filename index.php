@@ -14,38 +14,26 @@
   <section id="portfolio">
   	<div class="content">
   		<div class="grid">
+			<?php
+				$args = array(
+					'post_type' => 'portfolio_items'
+				);
+				$query = new WP_Query($args);
+			?>
+			<?php if ($query->have_posts() ) : ?>
+			<?php while ($query -> have_posts() ) : $query->the_post(); ?>
+			<a href="<?php the_permalink(); ?>">
 					<figure class="effect-zoe">
-						<img src="<?php bloginfo('template_directory')?>/build/images/portfolio/everly.jpg" alt="img25"/>
+						<?php the_post_thumbnail(); ?>
 						<figcaption>
 							<p class="icon-links">
-								<a href="http://localhost:8888/home/everly-detail/"><i class="fa fa-chevron-right"></i><h2>Everly <span>Stockholm</span></h2></a>
+								<a href="<?php the_permalink(); ?>"><i class="fa fa-chevron-right"></i><h2><?php the_title(); ?></h2></a>
 							</p>
 						</figcaption>			
 					</figure>
-  			<figure class="effect-zoe">
-  			  <img src="<?php bloginfo('template_directory')?>/build/images/portfolio/bucketlist.jpg" alt="img26"/>
-  				<figcaption>
-  					<p class="icon-links">
-  						<a href="http://localhost:8888/bucket-list-detail/"><i class="fa fa-chevron-right"></i><h2>Maddies Bucket List</h2></span></a>
-  					</p>
-  				</figcaption>			
-  			</figure>
-  			<figure class="effect-zoe">
-  			  <img src="<?php bloginfo('template_directory')?>/build/images/portfolio/thedepot.jpg" alt="img26"/>
-  				<figcaption>
-  					<p class="icon-links">
-  						<a href="http://localhost:8888/home/depot-detail/"><i class="fa fa-chevron-right"></i><h2>The Depot <span>Bondi Beach</span></h2></span></a>
-  					</p>
-  				</figcaption>			
-  			</figure>
-  			<figure class="effect-zoe">
-  				<img src="<?php bloginfo('template_directory')?>/build/images/portfolio/c21-office.jpg" alt="img25"/>
-  				<figcaption>
-  					<p class="icon-links">
-  						<a href="http://localhost:8888/21-century-detail/"><i class="fa fa-chevron-right"></i></span><h2>21 Century</h2></a>
-  					</p>
-  				</figcaption>			
-  			</figure>
+				</a>
+			<?php endwhile; ?>
+			<?php endif; ?>
   		</div>
     </div>
 </section>

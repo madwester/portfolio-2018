@@ -9,7 +9,7 @@ Template Name: contact
         <div class="row contactrow defaultrow">
                 <div class="col-md-12 text-center">
                     <h1>Want to say hello?</h1>
-                    <h3>I am currently studying, but am due to graduate shortly. If you are looking for a freelancer for a website or to hire a junior frontend developer. Get in touch.</h3>
+                    <h3>I am always interested in new projects. Just send me an email and I'll get back to you!</h3>
                 </div>
                 <div class="col-md-5 col-md-offset-1 col-sm-12 contact-form">
                 <?php echo do_shortcode( '[contact-form-7 id="56" title="Contact form 1"]' ); ?>

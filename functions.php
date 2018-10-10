@@ -36,6 +36,24 @@ function register_my_menu(){
 }
 add_action('after_setup_theme', 'register_my_menu');
 
+function imagesSize() {
+    add_image_size( 'hard-crop-1', 300, 100, true ); // Hard Crop Mode
+    add_image_size( 'hard-crop-2', 400, 150, true ); // Hard Crop Mode
+    add_image_size( 'soft-crop-1', 300, 100, false ); // soft Crop Mode
+    add_image_size( 'soft-crop-2', 400, 150, false ); // soft Crop Mode
+    }
+add_action( 'after_setup_theme', 'imagesSize', 15 );
+
+function my_custom_sizes( $sizes ) {
+    return array_merge( $sizes, array(
+      'hard-crop-1' => __( 'Hard Crop Small' ),
+      'hard-crop-2' => __( 'Hard Crop Large' ),
+      'soft-crop-1' => __( 'Soft Crop Small' ),
+      'soft-crop-2' => __( 'Soft Crop Large' ),
+    ) );
+  }
+  add_filter( 'image_size_names_choose', 'my_custom_sizes' );
+
 class Custom_Walker_Nav_Menu_top extends Walker_Nav_Menu
 {
     function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -70,3 +88,10 @@ add_filter( 'post_thumbnail_html', 'remove_img_attr' );
 }
 add_filter('body_class','my_custom_body_class_slug');
 */
+
+
+//define('WP_DEBUG', true);
+// define('WP_DEBUG_LOG', true);
+// define('WP_DEBUG_DISPLAY', true);
+// @ini_set('display_errors', 1);
+
